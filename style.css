@@ -1,0 +1,159 @@
+body {
+  background-image: url(bg.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+main {
+  background-color: #fff;
+  -webkit-box-shadow: inset;
+          box-shadow: inset;
+  text-align: center;
+}
+
+@media only screen and (max-width: 1000px) {
+  main {
+    height: 500px;
+    margin: 100px auto;
+    width: 450px;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  main {
+    height: 450px;
+    margin: 130px auto;
+    width: 80%;
+    border-radius: 20px;
+  }
+}
+
+.app {
+  font-family: sans-serif;
+}
+
+@media only screen and (max-width: 1000px) {
+  .app .title {
+    font-size: 16px;
+    font-weight: 600;
+    padding-top: 20px;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  .app .title {
+    font-size: 24px;
+    font-weight: 600;
+    padding-top: 50px;
+  }
+  .app .title p {
+    font-size: 16px;
+    font-weight: 300;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .app .convertor {
+    margin-bottom: 30px;
+  }
+  .app .convertor input {
+    height: 50px;
+    width: 300px;
+    font-size: 20px;
+    text-align: center;
+    font-weight: 400;
+    color: #000;
+    margin-bottom: 10px;
+  }
+  .app .convertor button {
+    height: 55px;
+    width: 307px;
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+    font-weight: 400;
+    text-align: center;
+    font-size: 16px;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  .app .convertor {
+    margin-bottom: 60px;
+  }
+  .app .convertor input {
+    height: 50px;
+    width: 250px;
+    font-size: 20px;
+    text-align: center;
+    font-weight: 400;
+    color: #000;
+  }
+  .app .convertor button {
+    height: 55px;
+    width: 100px;
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+    font-weight: 400;
+    text-align: center;
+    font-size: 16px;
+  }
+}
+
+.app #result {
+  margin-bottom: 15px;
+}
+
+@media only screen and (min-width: 1000px) {
+  .app #result {
+    font-size: 30px;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .app #result {
+    font-size: 24px;
+  }
+}
+
+.app #date {
+  margin-bottom: 15px;
+}
+
+@media only screen and (min-width: 1000px) {
+  .app #date {
+    font-size: 20px;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .app #date {
+    font-size: 16px;
+  }
+}
+
+.app #donate {
+  margin-bottom: 15px;
+}
+
+@media only screen and (min-width: 1000px) {
+  .app #donate {
+    font-size: 16px;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .app #donate {
+    font-size: 14px;
+  }
+}
+
+.ui-widget {
+  list-style-type: none;
+}
+
+.ui-widget li {
+  font-size: 16px;
+}
+/*# sourceMappingURL=style.css.map */

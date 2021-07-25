@@ -73,17 +73,17 @@ $('#convert').click(function (e) {
     $.get(apiUrl.concat(endpoints.convert), convertParams).then((response) => {
 
         //returns a success response
-        //console.log(response);
+        console.log(response);
 
         let amount = response.result.toLocaleString('en-US', { style: 'currency', currency: convertParams.to});
 
-        let text = convertParams.amount +' '+convertParams.from +' to '+convertParams.to +' is '+ amount
+        let text = convertParams.amount +' '+convertParams.from +' is '+ amount
 
-        $("#result").text(text);
+        $("#result").text(text).delay(1000).fadeIn(2000);;
 
-        $("#date").text("on "+response.date);
+        $("#date").text("on "+response.date).fadeIn('slow');
 
-        $("#donate").text(response.motd.url);
+        $("#donate").text(response.motd.url).fadeIn(2000);
 
     }).catch((err) => {
 

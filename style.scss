@@ -1,0 +1,123 @@
+body{
+    background-image: url(bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+main{
+
+background-color: #fff;
+box-shadow:inset;
+text-align: center;
+@media only screen and (max-width: 1000px) {
+    height: 500px;
+    margin: 100px auto;
+    width: 450px;
+}
+@media only screen and (min-width: 1000px) {
+    height: 450px;
+    margin: 130px auto;
+    width: 80%;
+    border-radius: 20px;
+}
+}
+.app{
+    font-family: sans-serif;
+    @media only screen and (max-width: 1000px) {
+        .title{
+            font-size: 16px;
+            font-weight: 600;
+            padding-top: 20px;
+        }
+
+    }
+    .title{
+        @media only screen and (min-width: 1000px) {
+            font-size: 24px;
+            p{
+                font-size: 16px;
+                font-weight: 300;
+            }
+            font-weight: 600;
+            padding-top: 50px;
+        }
+    }
+    .convertor{
+        @media only screen and (max-width: 1000px) {
+            margin-bottom: 30px;
+            input{
+                height: 50px;
+                width: 300px;
+                font-size: 20px;
+                text-align: center;
+                font-weight: 400;
+                color: #000;
+                margin-bottom: 10px;
+            }
+            button{
+                height: 55px;
+                width: 307px;
+                color: #fff;
+                background-color: #007bff;
+                border-color: #007bff;
+                font-weight: 400;
+                text-align: center;
+                font-size: 16px;
+            }
+
+        }
+        @media only screen and (min-width: 1000px) {
+            margin-bottom: 60px;
+            input{
+                height: 50px;
+                width: 250px;
+                font-size: 20px;
+                text-align: center;
+                font-weight: 400;
+                color: #000;
+            }
+            button{
+                height: 55px;
+                width: 100px;
+                color: #fff;
+                background-color: #007bff;
+                border-color: #007bff;
+                font-weight: 400;
+                text-align: center;
+                font-size: 16px;
+            }
+        }
+    }
+    #result{
+        @media only screen and (min-width: 1000px) {
+            font-size: 30px;
+        }
+        @media only screen and (max-width: 1000px) {
+            font-size: 24px;
+        }
+        margin-bottom: 15px;
+    }
+    #date{
+        @media only screen and (min-width: 1000px) {
+            font-size: 20px;
+        }
+        @media only screen and (max-width: 1000px) {
+            font-size: 16px;
+        }
+        margin-bottom: 15px;
+    }
+    #donate{
+        @media only screen and (min-width: 1000px) {
+            font-size: 16px;
+        }
+        @media only screen and (max-width: 1000px) {
+            font-size: 14px;
+        }
+        margin-bottom: 15px;
+    }
+}
+.ui-widget{
+    list-style-type: none;
+    li{
+        font-size: 16px;
+    }
+}
