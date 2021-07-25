@@ -1,16 +1,31 @@
-// api access key and url'
+// api url'
 
-const apiUrl = 'http://data.fixer.io/api/latest';
+const apiUrl = 'https://api.exchangerate.host/';
+
+const endpoints = {
+                    rates: 'latest',
+                    convert: 'convert'
+                };
+
+//params for the call
 
 const apiParams = {
                     access_key : 'bf0a9073f48563839589649a30c8bbde'
                  };
 
-$.get('http://data.fixer.io/api/latest', apiParams).then((result) => {
+
+
+//using jQuery get to make api call
+
+$.get(apiUrl.concat(endpoints.rates)).then((response) => {
+
+    //returns a success response
 
     let ratesObj = response.rates
 
     let rateKeys = Object.keys(ratesObj);
+
+    //setting dynamic autocomplete for primary currency
 
     $( "#from" ).autocomplete({
 
@@ -20,6 +35,8 @@ $.get('http://data.fixer.io/api/latest', apiParams).then((result) => {
 
     });
 
+   //setting dynamic autocomplete for secondary currency
+
     $( "#to" ).autocomplete({
 
         source: rateKeys,
@@ -28,89 +45,52 @@ $.get('http://data.fixer.io/api/latest', apiParams).then((result) => {
 
     });
 
+    }).catch((err) => {
 
-}).catch((err) => {
+    // returns a error response
 
     console.error(err.statusText+' Something went wrong');
 
 });
 
-// (response,status, jqXHR) => {
+// onclick convert button event
+$('#convert').click(function (e) {
 
-//     console.log(status);
+    e.preventDefault();
 
-//     console.log(jqXHR.fail());
+    //setup different params for conversions
 
-//     // if(!jqXHR.fail()){
-//     //     alert('LALL')
-//     // }
+    let convertParams = {
+                            from   :   $('#from').val(),
+                            to     :   $('#to').val(),
+                            amount :   $('#amount').val(),
 
-//     let ratesObj = response.rates
-
-//     let rateKeys = Object.keys(ratesObj);
-
-//     $( "#from" ).autocomplete({
-
-//         source: rateKeys,
-
-//         autoFocus: true,
-
-//     });
-
-//     $( "#to" ).autocomplete({
-
-//         source: rateKeys,
-
-//         autoFocus: true,
-
-//     });
-
-// },'json');
+                         };
 
 
+    //console.log(convertParams);
 
-// fetch(fetch_url)
+    $.get(apiUrl.concat(endpoints.convert), convertParams).then((response) => {
 
-//     .then( response => response.json() )
+        //returns a success response
+        //console.log(response);
 
-//     .then( data => {
-//                         rates = data.rates;
+        let amount = response.result.toLocaleString('en-US', { style: 'currency', currency: convertParams.to});
 
-//                         //console.log(rates);
+        let text = convertParams.amount +' '+convertParams.from +' to '+convertParams.to +' is '+ amount
 
-//                         let currencies = new Array();
+        $("#result").text(text);
 
-//                         for (const rateLabel in rates) {
+        $("#date").text("on "+response.date);
 
-//                             let li = document.createElement('li');
+        $("#donate").text(response.motd.url);
 
-//                             currencies.push(rateLabel)
+    }).catch((err) => {
 
-//                             //console.log(`${rate}: ${rates[rate]}`);
+        // returns a error response
 
-//                         }
+        console.error(err.statusText+' Something went wrong');
 
-//                        // console.log(currencies);
+    });
 
-//                         $( "#from" ).autocomplete({
-
-//                             source: currencies,
-
-//                             autoFocus: true,
-
-//                             minLength: 2
-//                         });
-
-//                         $( "#to" ).autocomplete({
-
-//                             source: currencies,
-
-//                             autoFocus: true,
-
-//                             minLength: 2
-
-//                         });
-
-
-//                     //});
-
+});
