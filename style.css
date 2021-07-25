@@ -15,7 +15,7 @@ main {
   main {
     height: 500px;
     margin: 100px auto;
-    width: 450px;
+    width: 100%;
   }
 }
 
