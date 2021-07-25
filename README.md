@@ -1,2 +1,1 @@
-# js-currency-exchange
-JavaScript Currency Exchanger
+This will allow us to convert any currency with any amount
